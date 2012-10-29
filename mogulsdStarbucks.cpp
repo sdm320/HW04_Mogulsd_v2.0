@@ -18,10 +18,10 @@ Entry* mogulsdStarbucks::getNearest(double x, double y){
 	Entry nearest  = arrayData[0];
 	Entry* temp = new Entry();
 	for(int i=0;i<arrayLength;i++){
-		int myX = arrayData[i].x-x;
-		int myY = arrayData[i].y-y;
-		int nearestX = nearest.x-x;
-		int nearestY = nearest.y-y;
+		double myX = arrayData[i].x-x;
+		double myY = arrayData[i].y-y;
+		double nearestX = nearest.x-x;
+		double nearestY = nearest.y-y;
 		if(sqrt(pow(myX,2.0) + pow(myY,2.0))< sqrt(pow(nearestX,2.0) + pow(nearestY,2.0)))
 		{
 			nearest = arrayData[i];
