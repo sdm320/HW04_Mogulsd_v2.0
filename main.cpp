@@ -14,6 +14,8 @@ int main(){
 	starbucksLocations = new Entry[7700];
 	myfile.open("Starbucks_2006.csv");
 	int i = 0;
+	double userX;
+	double userY;
 	bool found = false;
 	string identifier = "";
 	if(myfile.fail())
@@ -23,6 +25,10 @@ int main(){
 	}
 	else
     {
+		cout<<"Please enter an X coordinate (0<X<1) and hit enter" << endl;
+		cin>>userX;
+		cout<<"Please enter an Y coordinate (0<Y<1) and hit enter" << endl;
+		cin>>userY;
 		while(!myfile.eof()){
 			//tried to eliminate duplicates
 			/*getline(myfile, starbucksLocations[i].identifier,',');
@@ -45,7 +51,7 @@ int main(){
 		myfile.close();
 		mogulsdStarbucks* starbucks = new mogulsdStarbucks();
 		starbucks ->build(starbucksLocations,7655);
-		Entry* nearest = starbucks ->getNearest(.5,.5);
+		Entry* nearest = starbucks ->getNearest(userX,userY);
 		cout<<"Nearest location "<<nearest->identifier<<" "<<nearest->x<<" "<<nearest->y<<endl;
 	}
 
